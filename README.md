@@ -17,7 +17,7 @@
 
 ## Installation & How to Use
 
-1. Download the latest release from the [Releases](/releases/latest) section.
+1. Download the latest release from the [Releases](https://github.com/ACoolerName/Schedule-1-Save-Editor/releases/latest) section.
 2. Extract the contents to a folder of your choice.
 3. Run the `run.bat` file to launch the program.
 
