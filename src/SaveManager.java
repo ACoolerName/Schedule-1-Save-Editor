@@ -73,6 +73,7 @@ public class SaveManager {
             System.out.println("1. Edit Inventory");
             System.out.println("2. Edit Money");
             System.out.println("3. Edit Unlocks");
+            System.out.println("4. Spawn Items");
             System.out.println("-1. Go back");
 
             Scanner scanner = new Scanner(System.in);
@@ -87,6 +88,9 @@ public class SaveManager {
                     break;
                 case 3: 
                     MenuUnlocks.run(scanner, slot);
+                    break;
+                case 4:
+                    GetItems.run(scanner, slot);
                     break;
 
                 case -1: 

@@ -9,7 +9,8 @@ public class MenuUnlocks {
         while (true) {
             TerminalUtil.clearScreen();
             System.out.println("1. Unlock Items & Areas");
-            System.out.println("2. Toggle Business Ownership");
+            System.out.println("2. Unlock NPC's");
+            System.out.println("3. Toggle Business Ownership");
             System.out.println("-1. Go Back");
 
             String input = scanner.nextLine();
@@ -24,6 +25,8 @@ public class MenuUnlocks {
             if (choice == 1) {
                 unlockItemsAndAreas(scanner, slot);
             } else if (choice == 2) {
+                unlockNpcs(scanner, slot);
+            } else if (choice == 3) {
                 toggleBusinesses(scanner, slot);
             } else if (choice == -1) {
                 break;
@@ -47,6 +50,51 @@ public class MenuUnlocks {
             scanner.nextLine();
         }
     }
+
+    private static void unlockNpcs(Scanner scanner, int slot) {
+        TerminalUtil.clearScreen();
+        System.out.print("Are you sure you want to unlock all NPCs? (y/n): ");
+        String confirm = scanner.nextLine();
+    
+        if (!confirm.equalsIgnoreCase("y")) {
+            return;
+        }
+    
+        String npcsPath = SaveManager.getBasePath() + "SaveGame_" + slot + "\\NPCs";
+        File npcsDir = new File(npcsPath);
+    
+        if (!npcsDir.exists() || !npcsDir.isDirectory()) {
+            System.out.println("NPCs directory not found. Press enter...");
+            scanner.nextLine();
+            return;
+        }
+    
+        for (File npcFolder : npcsDir.listFiles()) {
+            if (!npcFolder.isDirectory()) continue;
+    
+            File relationshipFile = new File(npcFolder, "Relationship.json");
+    
+            JSONObject json;
+            if (relationshipFile.exists()) {
+                json = JsonUtil.readJson(relationshipFile);
+            } else {
+                json = new JSONObject();
+                json.put("DataType", "RelationshipData");
+                json.put("DataVersion", 0);
+                json.put("GameVersion", "0.3.3f15");
+            }
+    
+            json.put("RelationDelta", 5);
+            json.put("Unlocked", true);
+            json.put("UnlockType", 1);
+    
+            JsonUtil.writeJson(relationshipFile, json);
+        }
+    
+        System.out.println("Successfully unlocked all NPCs. Press enter...");
+        scanner.nextLine();
+    }
+
 
     private static void toggleBusinesses(Scanner scanner, int slot) {
         String[] businesses = { "Car Wash", "Laundromat", "Post Office", "Taco Ticklers" };

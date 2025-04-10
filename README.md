@@ -2,7 +2,7 @@
 *by ACoolerName*
 
 ## Version
-**1.0**  
+**2.0**  
 *Working game version: 0.3.3f15*
 
 ---
@@ -11,7 +11,8 @@
 
 - **Inventory**: Edit item quantities
 - **Money**: Modify cash, card balance, and deposit limits
-- **Unlocks**: Unlock items, areas, and businesses
+- **Unlocks**: Unlock items & areas, NPC's, and businesses
+- **Items**: Spawn any item via deliveries
 
 ---
 
