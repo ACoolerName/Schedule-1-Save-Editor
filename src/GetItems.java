@@ -287,7 +287,9 @@ public class GetItems {
         } catch (Exception e) {
             System.out.println("Failed to read item list. Cannot validate inputs.");
         }
-    
+
+        scanner.nextLine();
+        
         while (true) {
             int emptySlots = 0, partiallyAvailable = 0, totalSpace = 0;
             Map<Integer, Integer> partialSlots = new LinkedHashMap<>();
@@ -320,7 +322,6 @@ public class GetItems {
     
             System.out.printf("This delivery %s and can hold up to %d more items.\n", slotsText, totalAvailable);
             System.out.print("Enter item ID to add (or -1 to go back): ");
-            scanner.nextLine();
             String itemId = scanner.nextLine();
     
             if (itemId.equals("-1")) return;
