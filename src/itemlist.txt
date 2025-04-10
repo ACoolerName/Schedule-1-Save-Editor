@@ -25,8 +25,8 @@ flumedicine
 fullspectrumgrowlight
 gasoline
 goldenskateboard
-granddaddypurpleseeds
-greencrackseeds
+granddaddypurpleseed
+greencrackseed
 growtent
 halogengrowlight
 highqualitypseudo
@@ -47,7 +47,7 @@ mixingstationmk2
 moisturepreservingpot
 motoroil
 mouthwash
-ogkushseeds
+ogkushseed
 packagingstation
 packagingstationmk2
 paracetamol
@@ -61,7 +61,7 @@ skateboard
 smallstoragerack
 soil
 soilpourer
-sourdieselseeds
+sourdieselseed
 speedgrow
 suspensionrack
 trashbag
