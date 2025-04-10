@@ -2,7 +2,7 @@
 *by ACoolerName*
 
 ## Version
-**2.0**  
+**2.1**  
 *Working game version: 0.3.3f15*
 
 ---
